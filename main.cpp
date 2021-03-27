@@ -10,7 +10,7 @@ int main(int argc, char const *argv[]){
         cpu->print();
         delete cpu;
     }else{
-        std::cout << "No input file provided" << std::endl;
+        std::cout << "No input file provided!" << std::endl;
     }
     return 0;
 
