@@ -58,7 +58,7 @@ void CPU::run(){
 
         }else{
             this->numReads++;
-            bool hit = this->cache->search(address);
+            bool hit = this->cache->find(address);
             sStream << address << ' ' << 0 << ' ' << (hit ? " HIT" : " MISS") << std::endl;
             hit ? this->numHits++ : numMisses++;
         }

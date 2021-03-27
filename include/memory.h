@@ -11,7 +11,6 @@
         std::map<int, std::string> data;
     public:
         Memory();
-        ~Memory();
         void write(int address, std::string);
         void writeBlock(int address, std::vector<std::string>);
         std::string getWord(int address);
