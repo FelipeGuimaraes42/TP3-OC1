@@ -13,7 +13,7 @@ OBJECTS := $(patsubst ./src/%,./build/%,$(SOURCES:.cpp=.o))
 
 clean:
 	rm -rf ./build/*
-	rm ./result.txt
+	rm ./output/result.txt
 	rm ./tp3
 
 run:

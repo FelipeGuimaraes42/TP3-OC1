@@ -2,7 +2,7 @@
 
 CPU::CPU(char const* file){
     this->input.open(file);
-    this->output.open("result.txt");
+    this->output.open("./output/result.txt");
 }
 
 CPU::~CPU(){
