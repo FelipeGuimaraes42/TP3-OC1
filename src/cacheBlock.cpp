@@ -14,7 +14,7 @@ int  CacheBlock::getTag () {
 std::string CacheBlock::getData (int offset) {
     return this->data[offset];
 }
-
+ 
 void CacheBlock::setValid (bool valid) {
     this->valid = valid;
 }
