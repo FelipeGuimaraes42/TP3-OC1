@@ -13,7 +13,8 @@ OBJECTS := $(patsubst ./src/%,./build/%,$(SOURCES:.cpp=.o))
 
 clean:
 	rm -rf ./build/*
+	rm ./result.txt
 	rm ./tp3
 
 run:
-	$(TARGET_NAME) ./input/input.txt
+	./tp3 ./input/input.txt
