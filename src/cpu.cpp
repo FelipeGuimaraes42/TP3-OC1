@@ -3,11 +3,13 @@
 CPU::CPU(char const* file){
     this->input.open(file);
     this->output.open("./output/result.txt");
+    this->cache = new Cache();
 }
 
 CPU::~CPU(){
     this->input.close();
     this->output.close();
+    delete this->cache;
 }
 
 std::string CPU::intToBinary(int intAdress){
@@ -43,19 +45,21 @@ void CPU::run(){
 
     while(!(this->input.eof())){
         std::stringstream sStream;
-        int add;
-        bool wrt;
-        input >> add >> wrt;
+        int address;
+        bool write;
+        input >> address >> write;
 
-        if(wrt){
+        if(write){
             this->numWrites++;
             std::string line;
             input >> line;
-            //TODO
+            this->cache->write(address, line);
+            sStream << address << ' ' << 1 << ' ' << line << " W" << std::endl;
+
         }else{
             this->numReads++;
-            //TODO
-            bool hit;
+            bool hit = this->cache->search(address);
+            sStream << address << ' ' << 0 << ' ' << (hit ? " HIT" : " MISS") << std::endl;
             hit ? this->numHits++ : numMisses++;
         }
         this->history.push_back(sStream.str());
@@ -65,8 +69,8 @@ void CPU::run(){
 
 void CPU::print(){
     
-   double hitRate = (double) this->numHits / (double) this->numMisses + this->numHits;
-   double missRate = (double) this->numMisses / (double) this->numMisses + this->numHits;
+   double hitRate = (double) this->numHits / (double) (this->numMisses + this->numHits);
+   double missRate = (double) this->numMisses / (double) (this->numMisses + this->numHits);
 
    this->output << "READS: " << this->numReads << std::endl;
    this->output << "WRITES: " << this->numWrites << std::endl;
