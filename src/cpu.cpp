@@ -64,7 +64,7 @@ void CPU::run(){
         }
         this->history.push_back(sStream.str());
     }
-    
+
 }
 
 void CPU::print(){
@@ -77,7 +77,7 @@ void CPU::print(){
    this->output << "HITS: " << this->numHits << std::endl;
    this->output << "MISSES: " << this->numMisses << std::endl;
    this->output << "HIT RATE: " << hitRate << std::endl;
-   this->output << "MISS RATE: " << missRate << std::endl;
+   this->output << "MISS RATE: " << missRate << std::endl << std::endl;
 
     for(std::vector<std::string>::iterator it = history.begin(); it!= history.end(); it++)
         this->output << *it;
