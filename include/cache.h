@@ -7,20 +7,17 @@
 #include <string>
 #include <vector>
 
-#define CACHE_SIZE 64 // Must change to 256
-
     class Cache{
     private:
         Memory memory;
-        CacheBlock blocks[CACHE_SIZE];
+        CacheBlock blocks[256];
     public:
         Cache();
         ~Cache();
         bool hit(int); // tagging hits and misses
-        bool search(int address);
-        int getIndex(int);
-        int getOffset(int);
-        int getTag(int);
+        static int getIndex(int);
+        static int getOffset(int);
+        static int getTag(int);
         void write(int, std::string); 
         void change(int, std::string);
         void replace(int, std::vector<std::string>);
