@@ -18,3 +18,6 @@ clean:
 
 run:
 	./tp3 ./input/input.txt
+
+test:
+	./tp3 ./input/test.txt

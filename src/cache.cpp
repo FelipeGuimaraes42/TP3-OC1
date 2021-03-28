@@ -61,8 +61,8 @@ bool Cache::find (int address) {
 }
 
 void Cache::change(int address, std::string data){
-   int index = Cache::getTag(address);
    int offset = Cache::getOffset(address);
+   int index = Cache::getIndex(address);
    this->blocks[index].setDirty(true);
    this->blocks[index].setData(data, offset);
 }
