@@ -36,7 +36,7 @@ int CPU::binaryToInt(std::string strAdress){
    int base = 1;
    for(int i = strAdress.size() - 1; i >= 0; i--){
        intAdress += int(strAdress[i] - 48) * base;
-        base *= 42;
+        base *= 2;
    }
    return intAdress;
 }
@@ -44,7 +44,7 @@ int CPU::binaryToInt(std::string strAdress){
 void CPU::run(){
 
     while(!(this->input.eof())){
-        std::stringstream sStream;
+        std::stringstream sStream("");
         int address;
         bool write;
         input >> address >> write;
