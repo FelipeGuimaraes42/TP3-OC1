@@ -1,8 +1,5 @@
 #include "../include/memory.h"
 #include "../include/cpu.h"
-#include <iostream>
-#include <vector>
-#include <map>
 
 Memory::Memory(){
 	int size = 4096;
@@ -33,6 +30,5 @@ std::vector<std::string> Memory::getBlock(int address){
 	for(int i = 0; i < 4; i++){
 		block.push_back(this->getWord(start + i));
 	}
-	// std::cout << "BLOCK SIZE ON GETBLOCK: " << block.size() << std::endl;
 	return block;
 }

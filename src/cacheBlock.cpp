@@ -29,9 +29,8 @@ void CacheBlock::setData (std::string data, int offset) { // acessing data, a pr
 }
 
 std::vector<std::string> CacheBlock::toVector () {
-    std::vector<std::string> dataBlock (BLOCK_SIZE) ;
-    for (int i = 0; i < BLOCK_SIZE; i++) {
+    std::vector<std::string> dataBlock (4) ;
+    for (int i = 0; i < 4; i++)
         dataBlock[i] = this->data[i];
-    }
     return dataBlock;
 }

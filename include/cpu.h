@@ -9,6 +9,7 @@
 #include <sstream>
 #include <cmath>
 #include <algorithm>
+#include <iostream>
 
     class CPU{
     private:

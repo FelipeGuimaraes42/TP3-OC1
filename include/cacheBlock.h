@@ -1,14 +1,12 @@
 #ifndef CACHE_BLOCK_H
 #define CACHE_BLOCK_H
 
-#define BLOCK_SIZE 4
-
 #include <string>
 #include <vector>
 
     class CacheBlock{
     private:
-        std::string data[BLOCK_SIZE];
+        std::string data[4];
         bool valid = false;
         bool dirty = false;
         int tag;
