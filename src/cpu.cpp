@@ -13,8 +13,7 @@ CPU::~CPU(){
 }
 
 std::string CPU::intToBinary(int intAdress){
-    std::string binaryAddress = std::bitset<32>(intAdress).to_string();
-   return binaryAddress;
+    return std::bitset<32>(intAdress).to_string();
 }
 
 int CPU::binaryToInt(std::string strAdress){
